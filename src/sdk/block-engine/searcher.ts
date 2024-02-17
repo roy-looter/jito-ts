@@ -152,7 +152,7 @@ export class SearcherClient {
       }
     });
     stream.on('error', e => {
-      stream.end();
+      stream.destroy();
       errorCallback(new Error(`Stream error: ${e.message}`));
     });
 
